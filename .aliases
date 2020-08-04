@@ -22,3 +22,11 @@ alias gp='git push'
 alias python="python3"
 alias py="python"
 alias pip="pip3"
+
+# Docker
+alias dcb="docker-compose build"
+alias dcub="docker-compose up --build"
+alias dcd="docker-compose down"
+alias dcrm="docker container rm $(docker container ls -aq)"
+alias dcs="docker container stop $(docker container ls -aq)"
+alias drmi="docker image rm $(docker image ls -a)"
