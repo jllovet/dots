@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,27 +18,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# This section is for Powerlevel9k theme.
-
-POWERLEVEL9K_MODE="nerdfont-complete"
-##POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir_writable dir vcs virtualenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs time disk_usage ram)
-#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-#POWERLEVEL9K_USER_ICON="\uF415" # 
-POWERLEVEL9K_ROOT_ICON="\uF09C"
-#POWERLEVEL9K_SUDO_ICON=$'\uF09C' # 
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
-#POWERLEVEL9K_VCS_GIT_ICON='\uF408 '
-# POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uF408 '
-
-# End Powerlevel9k configuration
+ZSH_THEME="llovet"
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -101,8 +83,6 @@ plugins=(
   golang
   python
   composer
-  zsh-syntax-highlighting
-  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -117,6 +97,10 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+export PATH="$PATH:/opt/homebrew/Cellar/openjdk@11/11.0.16.1_1/libexec/openjdk.jdk/Contents/Home"
+export PATH="$PATH:/Users/jllovet/Library/Android/sdk"
+# export PATH="$PATH:/opt/homebrew/opt/openjdk/bin"
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk@11/11.0.16.1_1/libexec/openjdk.jdk/Contents/Home"
 
 for file in ~/.{aliases,private}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -126,3 +110,10 @@ unset file;
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
