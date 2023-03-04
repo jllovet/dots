@@ -11,6 +11,7 @@ alias please="sudo"
 
 # Utils
 alias csv2json="python3 -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'"
+alias uuid="python3 -c 'import uuid; print(uuid.uuid4())'"
 alias mermaid="./node_modules/.bin/mmdc"
 
 # Time
