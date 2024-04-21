@@ -11,6 +11,7 @@ alias now='date +"%T"'
 alias sl='ls'
 alias lsd="find . -maxdepth 1 -not -type d"
 alias please="sudo"
+alias sz="source ~/.zshrc"
 
 # Utils
 alias csv2json="python3 -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'"
