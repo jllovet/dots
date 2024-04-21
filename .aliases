@@ -1,6 +1,7 @@
 # CLI Helpers
 alias cl='clear'
 alias ll='ls -la'
+alias l1='ls -1'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias ...='cd ..'
