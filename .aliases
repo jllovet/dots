@@ -2,6 +2,8 @@
 alias cl='clear'
 alias ll='ls -la'
 alias l1='ls -1'
+alias lf='ls -1 | tail -n 1'
+alias lastfile='ls -1 | tail -n 1'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias ...='cd ..'
