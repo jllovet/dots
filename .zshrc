@@ -117,3 +117,10 @@ source <(ng completion script)
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# C Conveniences
+function runc() {
+  fn=$(basename $1 .c)
+  gcc $fn.c -o tmp_$fn && ./tmp_$fn
+  rm tmp_$fn
+}
