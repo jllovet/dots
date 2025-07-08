@@ -1,6 +1,9 @@
 # CLI Helpers
 alias cl='clear'
 alias ll='ls -la'
+alias l1='ls -1'
+alias lf='ls -1 | tail -n 1'
+alias lastfile='ls -1 | tail -n 1'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias ...='cd ..'
@@ -8,6 +11,7 @@ alias now='date +"%T"'
 alias sl='ls'
 alias lsd="find . -maxdepth 1 -not -type d"
 alias please="sudo"
+alias sz="source ~/.zshrc"
 
 # Utils
 alias csv2json="python3 -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'"
