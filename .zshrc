@@ -124,3 +124,15 @@ function runc() {
   gcc $fn.c -o tmp_$fn && ./tmp_$fn
   rm tmp_$fn
 }
+
+# JSON Processing
+# Runs a command on each of the raw lines returned from iterating over a json list with jq
+# Example usage where repos.json is a json list of clone urls:
+# `jmap repos.json git clone --depth 1`
+function jmap() {
+    file="$1"
+    shift
+    jq -c -r '.[]' "$file" | while read -r i; do
+        "$@" "$i"
+    done
+}
